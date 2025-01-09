@@ -1,3 +1,4 @@
+// IMAGES
 import logo from "../assets/images/logo.png"; // Adjust the path as needed
 import x from "../assets/images/x.png";
 import instagram from "../assets/images/instagram.png";
