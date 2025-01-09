@@ -1,5 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
+// ROUTES
+import ROUTES from "../navigation/routes";
+
+// IMAGES
 import logo from "../assets/images/logo.png"; // Adjust the path as needed
 import bottomArrow from "../assets/images/bottomArrow.png";
 
@@ -8,7 +13,7 @@ const Navbar = () => {
     const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
     const [isServicesOpen, setIsServicesOpen] = useState(false);
 
-    // Toggle mobile menu
+    // FUNCTIONS
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen((prev) => !prev);
     };
@@ -59,7 +64,9 @@ const Navbar = () => {
                 </div>
 
                 <button className="text-[1.1rem] font-light text-white hover:underline">About Us</button>
-                <button className="text-[1.1rem] font-light text-white hover:underline">Blog</button>
+                <Link to={{ pathname: ROUTES.BLOGS.PATH }} className="text-[1.1rem] font-light text-white hover:underline">
+                    Blog
+                </Link>
 
                 {/* Contact Button */}
                 <button className="border-[1px] rounded-md border-white text-white px-5 py-1  hover:bg-[#4A47A3] hover:text-white transition duration-300">
@@ -77,7 +84,7 @@ const Navbar = () => {
             </div>
 
             {isMobileMenuOpen && (
-                <div className="lg:hidden absolute top-16 left-0 right-0 bg-[#111111] shadow-lg py-4 px-6 z-20">
+                <div className="text-left lg:hidden absolute top-16 left-0 right-0 bg-[#111111] shadow-lg py-4 px-6 z-20">
                     <ul className="space-y-4">
                         <li>
                             <button className="text-lg font-light text-white">Portfolio</button>
@@ -95,7 +102,9 @@ const Navbar = () => {
                             <button className="text-lg font-light text-white">About Us</button>
                         </li>
                         <li>
-                            <button className="text-lg font-light text-white">Blog</button>
+                            <Link to={{ pathname: ROUTES.BLOGS.PATH }} className="text-lg font-light text-white">
+                                Blog
+                            </Link>
                         </li>
                         <li>
                             <button className="border-[1px] border-white text-white px-4 py-2 rounded hover:bg-[#4A47A3] hover:text-white transition duration-300">

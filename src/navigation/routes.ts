@@ -1,16 +1,28 @@
-import Company from "../pages/Company";
+import { ReactNode } from "react";
 
-const ROUTES: TRoutes = [
-    {
-        Path: "/",
-        Component: Company,
+// COMPONENTS
+import Company from "../pages/Company";
+import Blog from "../pages/Blog";
+
+const ROUTES: TROUTE = {
+    COMPANY: {
+        PATH: "/",
+        COMPONENT: Company,
     },
-];
+    BLOGS: {
+        PATH: "/blogs",
+        COMPONENT: Blog,
+    },
+};
 
 export default ROUTES;
 
 // TYPES
-type TRoutes = Array<{
-    Path: string;
-    Component: () => JSX.Element;
-}>;
+type TRouteItem = {
+    PATH: string;
+    COMPONENT: () => ReactNode;
+};
+type TROUTE = {
+    COMPANY: TRouteItem;
+    BLOGS: TRouteItem;
+};

@@ -6,10 +6,11 @@ import WhatWeDo from "../components/Company/WhatWeDo";
 import JoinKingItLabs from "../components/Company/JoinKingItLabs";
 import WhosBehindKingItLab from "../components/Company/WhosBehindKingItLab";
 import WelcomeToKingItLabs from "../components/Company/WelcomeToKingItLabs";
+import Layout from "../components/Layout";
 
-const Home = () => {
+const Company = () => {
     return (
-        <div className="flex flex-col min-h-screen">
+        <Layout>
             <Navbar />
             <WelcomeToKingItLabs />
             <WhatWeDo />
@@ -17,8 +18,8 @@ const Home = () => {
             <JoinKingItLabs />
             <FAQ />
             <Footer />
-        </div>
+        </Layout>
     );
 };
 
-export default Home;
+export default Company;

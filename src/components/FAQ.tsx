@@ -50,7 +50,7 @@ const FAQ = () => {
         >
             {/* Center Text */}
             <div className="w-full mt-[2rem] mb-[2.5rem]">
-                <p className="xl:mx-[9.4rem] lg:mx-[2rem] md:mx-[2rem] mx-[2rem] xl:text-[4rem] lg:text-[4rem] md:text-[3rem] text-[2rem] font-[200] text-white xl:mb-[1rem] lg:mb-[1rem]">
+                <p className="xl:text-left lg:text-left md:text-left text-left xl:mx-[9.4rem] lg:mx-[2rem] md:mx-[2rem] mx-[2rem] xl:text-[4rem] lg:text-[4rem] md:text-[3rem] text-[2rem] font-[200] text-white xl:mb-[1rem] lg:mb-[1rem]">
                     Frequently Asked Questions
                 </p>
             </div>
@@ -58,7 +58,7 @@ const FAQ = () => {
             {/* FAQ Questions and Answers */}
             <div className="w-full max-w-7xl text-white px-6 sm:px-4 ml-0 sm:ml-0">
                 {faqData.map((item, index) => (
-                    <div key={index} className="mb-6 p-4 rounded-lg shadow-md w-full">
+                    <div key={index} className="text-left mb-6 p-4 rounded-lg shadow-md w-full">
                         {/* Question */}
                         <div
                             onClick={() => toggleAnswer(index)}
@@ -70,7 +70,9 @@ const FAQ = () => {
 
                         {/* Answer */}
                         {activeIndex === index && (
-                            <p className="mt-3 text-[1rem] font-extralight break-all text-[#FFFFFF] leading-relaxed">{item.answer}</p>
+                            <p className="mt-3 xl:text-[1rem] lg:text-[1rem] md:text-[1rem] text-[0.75rem] font-extralight break-all text-[#FFFFFF] leading-relaxed">
+                                {item.answer}
+                            </p>
                         )}
                     </div>
                 ))}
