@@ -64,7 +64,7 @@ const Navbar = () => {
                 </div>
 
                 <button className="text-[1.1rem] font-light text-white hover:underline">About Us</button>
-                <Link to={{ pathname: ROUTES.BLOGS.PATH }} className="text-[1.1rem] font-light text-white hover:underline">
+                <Link to={{ pathname: ROUTES.BLOG.PATH }} className="text-[1.1rem] font-light text-white hover:underline">
                     Blog
                 </Link>
 
@@ -102,7 +102,7 @@ const Navbar = () => {
                             <button className="text-lg font-light text-white">About Us</button>
                         </li>
                         <li>
-                            <Link to={{ pathname: ROUTES.BLOGS.PATH }} className="text-lg font-light text-white">
+                            <Link to={{ pathname: ROUTES.BLOG.PATH }} className="text-lg font-light text-white">
                                 Blog
                             </Link>
                         </li>

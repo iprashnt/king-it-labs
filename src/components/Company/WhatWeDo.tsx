@@ -37,7 +37,7 @@ const WhatWeDo = () => {
     ];
 
     return (
-        <div className="bg-[#0E0E0E] flex flex-col items-center  py-4 xl:px-[8rem] lg:px-[4rem] md:px-[3rem] px-[1rem]">
+        <div className="bg-[#0E0E0E] flex flex-col items-center py-4 xl:px-[8rem] lg:px-[4rem] md:px-[3rem] px-[1rem]">
             <MainHeading className="mb-[5rem] mt-20" text="What We Do" />
             <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-x-10 md:gap-y-20 gap-24 w-full mb-[3rem]">
                 {whatWeDoData.map(({ id, logo, title, description }) => {

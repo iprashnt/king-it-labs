@@ -1,17 +1,22 @@
 import { ReactNode } from "react";
 
 // COMPONENTS
-import Company from "../pages/Company";
 import Blog from "../pages/Blog";
+import Company from "../pages/Company";
+import BlogArticle from "../pages/BlogArticle";
 
 const ROUTES: TROUTE = {
     COMPANY: {
         PATH: "/",
         COMPONENT: Company,
     },
-    BLOGS: {
-        PATH: "/blogs",
+    BLOG: {
+        PATH: "/blog",
         COMPONENT: Blog,
+    },
+    BLOG_ARTICLE: {
+        PATH: ":id",
+        COMPONENT: BlogArticle,
     },
 };
 
@@ -24,5 +29,6 @@ type TRouteItem = {
 };
 type TROUTE = {
     COMPANY: TRouteItem;
-    BLOGS: TRouteItem;
+    BLOG: TRouteItem;
+    BLOG_ARTICLE: TRouteItem;
 };

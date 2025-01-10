@@ -1,15 +1,14 @@
 import { useNavigate } from "react-router-dom";
+import ROUTES from "../../navigation/routes";
 
 // IMAGES
-import cardImg from "../../assets/images/blog_card_img.png";
 import avatar from "../../assets/images/blog_card_avatar.png";
+import cardImg from "../../assets/images/blog_card_img.png";
 
 // COMPONENTS
-import MainHeading from "../MainHeading";
-import ROUTES from "../../navigation/routes";
-import BlogArticleCard from "./BlogArticleCard";
+import Card from "./Card";
 
-const OurBlogs = () => {
+const SimilarArticles = () => {
     const navigate = useNavigate();
 
     // MOCK DATA
@@ -106,23 +105,18 @@ const OurBlogs = () => {
     };
 
     return (
-        <>
-            <MainHeading text="Our Blogs" />
-            <div className="w-full flex justify-center py-6 px-6">
-                <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-x-[1.5rem] gap-y-[4rem]">
-                    {blogData.map((item) => {
-                        return <BlogArticleCard key={item.id} card={item} onClickReadArticle={reacdArticleHandler} />;
-                    })}
-                </div>
+        <div className="mb-[4rem]">
+            <p className="text-white text-[1.75rem] font-medium mb-[1.5rem]">You May Also Like</p>
+            <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 xl:gap-0 lg:gap-[1.5rem] md:gap-[1.5rem] gap-[1.5rem]">
+                {blogData.slice(0, 4).map((item) => {
+                    return <Card key={item.id} card={item} onClickReadArticle={reacdArticleHandler} />;
+                })}
             </div>
-            <button className="text-white my-[4rem] self-center w-fit text-[1.125rem] font-medium py-[0.625rem] px-[1rem] border-2 border-white rounded-2xl">
-                Load More
-            </button>
-        </>
+        </div>
     );
 };
 
-export default OurBlogs;
+export default SimilarArticles;
 
 // TYPES
 type TBlogData = {

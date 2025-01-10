@@ -13,7 +13,11 @@ createRoot(document.getElementById("root")!).render(
         <Router>
             <Routes>
                 <Route path={ROUTES.COMPANY.PATH} element={<ROUTES.COMPANY.COMPONENT />} />
-                <Route path={ROUTES.BLOGS.PATH} element={<ROUTES.BLOGS.COMPONENT />} />
+                <Route path={ROUTES.BLOG.PATH} element={<ROUTES.BLOG.COMPONENT />} />
+                <Route path={ROUTES.BLOG.PATH}>
+                    <Route index element={<ROUTES.BLOG.COMPONENT />} />
+                    <Route path={ROUTES.BLOG_ARTICLE.PATH} element={<ROUTES.BLOG_ARTICLE.COMPONENT />} />
+                </Route>
             </Routes>
         </Router>
     </StrictMode>
