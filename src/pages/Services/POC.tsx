@@ -22,7 +22,7 @@ import HowWeDoSection from "../../components/Services/HowWeDoSection";
 import WhatWillYouGet from "../../components/Services/WhatWillYouGet";
 import FormSection from "../../components/Services/FormSection";
 
-const Services = () => {
+const POC = () => {
     const whyPocData: Array<TPOCCommonItem> = [
         {
             id: 1,
@@ -79,6 +79,38 @@ const Services = () => {
             logo: AnalyzeAndScaleImage,
         },
     ];
+    const whatWillYougetData: Array<TWhatWillYouGetItem> = [
+        {
+            id: 1,
+            title: "Proof of Concept Plan",
+            description: "A detailed outline that defines the objectives, success criteria, and timeline for the PoC.",
+        },
+        {
+            id: 2,
+            title: "Research Findings",
+            description: "Documentation of user interviews, market research, and pain points identified from potential users.",
+        },
+        {
+            id: 3,
+            title: "Prototype Design",
+            description: "A working model or prototype that demonstrates the core functionality of the idea being tested.",
+        },
+        {
+            id: 4,
+            title: "Implementation Plan",
+            description: "A strategy for how the PoC will be executed, including resources needed and roles assigned.",
+        },
+        {
+            id: 5,
+            title: "Testing Documentation",
+            description: "This includes test cases, scripts, and results that provide insights into the prototype’s performance.",
+        },
+        {
+            id: 6,
+            title: "Final Report",
+            description: "A document summarizing findings, feedback from testing, and recommendations for next steps.",
+        },
+    ];
 
     return (
         <Layout>
@@ -92,7 +124,7 @@ const Services = () => {
                 />
                 <WhySection heading="Why Go for a PoC?" cardData={whyPocData} />
                 <HowWeDoSection heading="How We Do PoCs" cardData={howWePocData} />
-                <WhatWillYouGet />
+                <WhatWillYouGet heading="What You’ll Get" cardData={whatWillYougetData} />
             </WrapperLayout>
             <FormSection />
             <FAQ />
@@ -101,7 +133,7 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default POC;
 
 // TYPES
 type TPOCCommonItem = {
@@ -110,3 +142,4 @@ type TPOCCommonItem = {
     description: string;
     logo: string;
 };
+type TWhatWillYouGetItem = { id: number; title: string; description: string };

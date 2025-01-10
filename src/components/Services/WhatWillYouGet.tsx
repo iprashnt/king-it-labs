@@ -1,41 +1,9 @@
-const WhatWillYouGet = () => {
-    // MOCK DATA
-    const cardData: Array<TCardData> = [
-        {
-            id: 1,
-            title: "Proof of Concept Plan",
-            description: "A detailed outline that defines the objectives, success criteria, and timeline for the PoC.",
-        },
-        {
-            id: 2,
-            title: "Research Findings",
-            description: "Documentation of user interviews, market research, and pain points identified from potential users.",
-        },
-        {
-            id: 3,
-            title: "Prototype Design",
-            description: "A working model or prototype that demonstrates the core functionality of the idea being tested.",
-        },
-        {
-            id: 4,
-            title: "Implementation Plan",
-            description: "A strategy for how the PoC will be executed, including resources needed and roles assigned.",
-        },
-        {
-            id: 5,
-            title: "Testing Documentation",
-            description: "This includes test cases, scripts, and results that provide insights into the prototype’s performance.",
-        },
-        {
-            id: 6,
-            title: "Final Report",
-            description: "A document summarizing findings, feedback from testing, and recommendations for next steps.",
-        },
-    ];
+import { FC } from "react";
 
+const WhatWillYouGet: FC<Props> = ({ heading = "", cardData = [] }) => {
     return (
         <div className="mt-[4rem]">
-            <p className="text-white text-[2.5rem] font-extralight text-center mb-[2rem]">What You’ll Get</p>
+            <p className="text-white text-[2.5rem] font-extralight text-center mb-[2rem]">{heading}</p>
             <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-[1.188rem]">
                 {cardData.map(({ id, title, description }) => {
                     return (
@@ -53,8 +21,8 @@ const WhatWillYouGet = () => {
 export default WhatWillYouGet;
 
 // TYPES
-type TCardData = {
-    id: number;
-    title: string;
-    description: string;
-};
+type TWhatWillYouGetItem = { id: number; title: string; description: string };
+interface Props {
+    heading: string;
+    cardData: Array<TWhatWillYouGetItem>;
+}

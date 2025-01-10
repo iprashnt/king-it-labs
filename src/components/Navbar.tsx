@@ -66,8 +66,18 @@ const Navbar = () => {
                             >
                                 POC
                             </li>
-                            <li className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100">MVP</li>
-                            <li className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100">LIVE</li>
+                            <li
+                                onClick={() => navigate(ROUTES.SERVICES.MVP.PATH)}
+                                className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100"
+                            >
+                                MVP
+                            </li>
+                            <li
+                                onClick={() => navigate(ROUTES.SERVICES.FDP.PATH)}
+                                className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100"
+                            >
+                                LIVE
+                            </li>
                             <li className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100">Support Service</li>
                         </ul>
                     )}
