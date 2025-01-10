@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import Blog from "../pages/Blog";
 import Company from "../pages/Company";
 import BlogArticle from "../pages/BlogArticle";
+import POC from "../pages/Services/POC";
 
 const ROUTES: TROUTE = {
     COMPANY: {
@@ -18,6 +19,9 @@ const ROUTES: TROUTE = {
         PATH: ":id",
         COMPONENT: BlogArticle,
     },
+    SERVICES: {
+        POC: { PATH: "/services/poc", COMPONENT: POC },
+    },
 };
 
 export default ROUTES;
@@ -31,4 +35,5 @@ type TROUTE = {
     COMPANY: TRouteItem;
     BLOG: TRouteItem;
     BLOG_ARTICLE: TRouteItem;
+    SERVICES: { POC: TRouteItem };
 };

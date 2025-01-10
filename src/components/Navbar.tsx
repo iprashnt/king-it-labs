@@ -49,10 +49,11 @@ const Navbar = () => {
 
                 {/* Services Dropdown */}
                 <div className="relative">
-                    <div className="cursor-pointer hover:underline text-white flex items-center gap-[0.5rem]">
-                        <button onClick={() => setIsServicesOpen((prev) => !prev)} className="text-[1.1rem] font-light text-white hover:underline">
-                            Services
-                        </button>
+                    <div
+                        onClick={() => setIsServicesOpen((prev) => !prev)}
+                        className="cursor-pointer hover:underline text-white flex items-center gap-[0.5rem]"
+                    >
+                        <button className="text-[1.1rem] font-light text-white hover:underline">Services</button>
                         <img src={bottomArrow} className="mt-1 cursor-pointer" />
                     </div>
                     {isServicesOpen && (

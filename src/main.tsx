@@ -18,6 +18,9 @@ createRoot(document.getElementById("root")!).render(
                     <Route index element={<ROUTES.BLOG.COMPONENT />} />
                     <Route path={ROUTES.BLOG_ARTICLE.PATH} element={<ROUTES.BLOG_ARTICLE.COMPONENT />} />
                 </Route>
+
+                {/* SERVICES */}
+                <Route path={ROUTES.SERVICES.POC.PATH} element={<ROUTES.SERVICES.POC.COMPONENT />} />
             </Routes>
         </Router>
     </StrictMode>

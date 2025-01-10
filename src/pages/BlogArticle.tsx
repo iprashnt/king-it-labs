@@ -13,7 +13,7 @@ const BlogArticle = () => {
         <Layout>
             <Navbar />
             <WrapperLayout>
-                <Breadcrumb />
+                <Breadcrumb text1="Blogs" text2="5 Efficient Rules How to Organize Your Working Place" />
                 <ArticleHeading />
                 <ArticleContent />
                 <SimilarArticles />
