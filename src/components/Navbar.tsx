@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // ROUTES
 import ROUTES from "../navigation/routes";
@@ -9,6 +9,8 @@ import logo from "../assets/images/logo.png"; // Adjust the path as needed
 import bottomArrow from "../assets/images/bottomArrow.png";
 
 const Navbar = () => {
+    const navigate = useNavigate();
+
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
     const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -58,8 +60,15 @@ const Navbar = () => {
                     </div>
                     {isServicesOpen && (
                         <ul className="absolute bg-white shadow-lg mt-2 rounded">
-                            <li className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100">Service 1</li>
-                            <li className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100">Service 2</li>
+                            <li
+                                onClick={() => navigate(ROUTES.SERVICES.POC.PATH)}
+                                className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100"
+                            >
+                                POC
+                            </li>
+                            <li className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100">MVP</li>
+                            <li className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100">LIVE</li>
+                            <li className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100">Support Service</li>
                         </ul>
                     )}
                 </div>
