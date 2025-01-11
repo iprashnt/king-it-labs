@@ -7,6 +7,7 @@ import BlogArticle from "../pages/BlogArticle";
 import POC from "../pages/Services/POC";
 import MVP from "../pages/Services/MVP";
 import FDP from "../pages/Services/FDP";
+import SupportService from "../pages/Services/SupportService";
 
 const ROUTES: TROUTE = {
     COMPANY: {
@@ -25,6 +26,7 @@ const ROUTES: TROUTE = {
         POC: { PATH: "/services/poc", COMPONENT: POC },
         MVP: { PATH: "/services/mvp", COMPONENT: MVP },
         FDP: { PATH: "/services/fdp", COMPONENT: FDP },
+        SUPPORT: { PATH: "/services/support", COMPONENT: SupportService },
     },
 };
 
@@ -39,5 +41,5 @@ type TROUTE = {
     COMPANY: TRouteItem;
     BLOG: TRouteItem;
     BLOG_ARTICLE: TRouteItem;
-    SERVICES: { POC: TRouteItem; MVP: TRouteItem; FDP: TRouteItem };
+    SERVICES: { POC: TRouteItem; MVP: TRouteItem; FDP: TRouteItem; SUPPORT: TRouteItem };
 };

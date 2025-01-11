@@ -9,7 +9,7 @@ const Heading: FC<Props> = ({ title, description, image }) => {
         <div className="mb-[2.5rem]">
             <MainHeading text={title} />
             <p className="text-[#F0F0F0] font-extralight text-[1.5rem] text-center mb-[2.5rem]">{description}</p>
-            <img src={image} />
+            {image && <img src={image} />}
         </div>
     );
 };
@@ -21,5 +21,5 @@ export default Heading;
 interface Props {
     title: string;
     description: string;
-    image: string;
+    image?: string;
 }
