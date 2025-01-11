@@ -12,6 +12,7 @@ createRoot(document.getElementById("root")!).render(
     <StrictMode>
         <Router>
             <Routes>
+                <Route path={ROUTES.HOME.PATH} element={<ROUTES.HOME.COMPONENT />} />
                 <Route path={ROUTES.COMPANY.PATH} element={<ROUTES.COMPANY.COMPONENT />} />
                 <Route path={ROUTES.BLOG.PATH} element={<ROUTES.BLOG.COMPONENT />} />
                 <Route path={ROUTES.BLOG.PATH}>

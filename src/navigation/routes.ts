@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 // COMPONENTS
+import Home from "../pages/Home";
 import Blog from "../pages/Blog";
 import Company from "../pages/Company";
 import BlogArticle from "../pages/BlogArticle";
@@ -10,8 +11,12 @@ import FDP from "../pages/Services/FDP";
 import SupportService from "../pages/Services/SupportService";
 
 const ROUTES: TROUTE = {
-    COMPANY: {
+    HOME: {
         PATH: "/",
+        COMPONENT: Home,
+    },
+    COMPANY: {
+        PATH: "/company",
         COMPONENT: Company,
     },
     BLOG: {
@@ -38,6 +43,7 @@ type TRouteItem = {
     COMPONENT: () => ReactNode;
 };
 type TROUTE = {
+    HOME: TRouteItem;
     COMPANY: TRouteItem;
     BLOG: TRouteItem;
     BLOG_ARTICLE: TRouteItem;
