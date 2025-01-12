@@ -8,7 +8,7 @@ import WrapperLayout from "../WrapperLayout";
 
 const OurProducts = () => {
     return (
-        <div className="mb-[8rem]">
+        <div id="ourProducts" className="mb-[8rem]">
             <WrapperLayout>
                 <div className="mb-[1.5rem]">
                     <p className="xl:text-[4rem] lg:text-[4rem] md:text-[3rem] text-[3rem] text-white text-center">Our Innovative Products</p>

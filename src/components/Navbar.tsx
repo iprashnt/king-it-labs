@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // ROUTES
 import ROUTES from "../navigation/routes";
@@ -8,9 +8,10 @@ import ROUTES from "../navigation/routes";
 import logo from "../assets/images/logo.png"; // Adjust the path as needed
 import bottomArrow from "../assets/images/bottomArrow.png";
 
-const Navbar = () => {
+const Navbar = ({ scrollToOurProducts = () => {} }) => {
     const navigate = useNavigate();
 
+    // STATES
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
     const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -19,23 +20,54 @@ const Navbar = () => {
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen((prev) => !prev);
     };
+    const desktopMenuHandler = (menu: string) => {
+        if (menu === "Home") {
+            return navigate(ROUTES.HOME.PATH);
+        }
+
+        if (menu === "Products") {
+            return scrollToOurProducts();
+        }
+
+        if (menu === "Blog") {
+            return navigate(ROUTES.BLOG.PATH);
+        }
+    };
+    const mobileMenuHandler = (menu: string) => {
+        toggleMobileMenu();
+
+        if (menu === "Products") {
+            return scrollToOurProducts();
+        }
+
+        if (menu === "Blog") {
+            return navigate(ROUTES.BLOG.PATH);
+        }
+    };
 
     return (
         <nav className="py-4 xl:px-[8rem] lg:px-[4rem] md:px-[3rem] px-[1rem] fixed w-full top-0 z-50 flex justify-between items-center backdrop-filter backdrop-blur-lg">
             {/* Logo with Text */}
             <div className="flex items-center">
-                <img src={logo} alt="Logo" className="h-9 w-30" />
+                <img onClick={() => desktopMenuHandler("Home")} src={logo} alt="Logo" className="cursor-pointer h-9 w-30" />
             </div>
 
             {/* Navbar Links */}
             <div className="hidden lg:flex items-center space-x-[1.5rem]">
-                <button className="text-[1.1rem] font-light text-white hover:underline ">Portfolio</button>
-                <button className="text-[1.1rem] font-light text-white hover:underline">Products</button>
+                <button onClick={() => desktopMenuHandler("Portfolio")} className="text-[1.1rem] font-light text-white hover:underline ">
+                    Portfolio
+                </button>
+                <button onClick={() => desktopMenuHandler("Products")} className="text-[1.1rem] font-light text-white hover:underline">
+                    Products
+                </button>
 
                 {/* Solutions Dropdown */}
                 <div className="relative">
                     <div
-                        onClick={() => setIsSolutionsOpen((prev) => !prev)}
+                        onClick={() => {
+                            setIsServicesOpen(false);
+                            setIsSolutionsOpen((prev) => !prev);
+                        }}
                         className="cursor-pointer hover:underline text-white flex items-center gap-[0.5rem]"
                     >
                         <button className="text-[1.1rem] font-light text-white">Solutions</button>
@@ -43,8 +75,22 @@ const Navbar = () => {
                     </div>
                     {isSolutionsOpen && (
                         <ul className="absolute bg-white shadow-lg mt-2 rounded">
-                            <li className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100">Solution 1</li>
-                            <li className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100">Solution 2</li>
+                            <li
+                                onClick={() => {
+                                    setIsSolutionsOpen(false);
+                                }}
+                                className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100"
+                            >
+                                Solution 1
+                            </li>
+                            <li
+                                onClick={() => {
+                                    setIsSolutionsOpen(false);
+                                }}
+                                className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100"
+                            >
+                                Solution 2
+                            </li>
                         </ul>
                     )}
                 </div>
@@ -52,7 +98,10 @@ const Navbar = () => {
                 {/* Services Dropdown */}
                 <div className="relative">
                     <div
-                        onClick={() => setIsServicesOpen((prev) => !prev)}
+                        onClick={() => {
+                            setIsSolutionsOpen(false);
+                            setIsServicesOpen((prev) => !prev);
+                        }}
                         className="cursor-pointer hover:underline text-white flex items-center gap-[0.5rem]"
                     >
                         <button className="text-[1.1rem] font-light text-white hover:underline">Services</button>
@@ -61,25 +110,37 @@ const Navbar = () => {
                     {isServicesOpen && (
                         <ul className="absolute bg-white shadow-lg mt-2 rounded">
                             <li
-                                onClick={() => navigate(ROUTES.SERVICES.POC.PATH)}
+                                onClick={() => {
+                                    setIsServicesOpen(false);
+                                    navigate(ROUTES.SERVICES.POC.PATH);
+                                }}
                                 className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100"
                             >
                                 POC
                             </li>
                             <li
-                                onClick={() => navigate(ROUTES.SERVICES.MVP.PATH)}
+                                onClick={() => {
+                                    setIsServicesOpen(false);
+                                    navigate(ROUTES.SERVICES.MVP.PATH);
+                                }}
                                 className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100"
                             >
                                 MVP
                             </li>
                             <li
-                                onClick={() => navigate(ROUTES.SERVICES.FDP.PATH)}
+                                onClick={() => {
+                                    setIsServicesOpen(false);
+                                    navigate(ROUTES.SERVICES.FDP.PATH);
+                                }}
                                 className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100"
                             >
                                 LIVE
                             </li>
                             <li
-                                onClick={() => navigate(ROUTES.SERVICES.SUPPORT.PATH)}
+                                onClick={() => {
+                                    setIsServicesOpen(false);
+                                    navigate(ROUTES.SERVICES.SUPPORT.PATH);
+                                }}
                                 className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100"
                             >
                                 Support Service
@@ -89,9 +150,9 @@ const Navbar = () => {
                 </div>
 
                 <button className="text-[1.1rem] font-light text-white hover:underline">About Us</button>
-                <Link to={{ pathname: ROUTES.BLOG.PATH }} className="text-[1.1rem] font-light text-white hover:underline">
+                <button onClick={() => desktopMenuHandler("Blog")} className="text-[1.1rem] font-light text-white hover:underline">
                     Blog
-                </Link>
+                </button>
 
                 {/* Contact Button */}
                 <button className="border-[1px] rounded-md border-white text-white px-5 py-1  hover:bg-[#4A47A3] hover:text-white transition duration-300">
@@ -112,24 +173,34 @@ const Navbar = () => {
                 <div className="text-left lg:hidden absolute top-16 left-0 right-0 bg-[#111111] shadow-lg py-4 px-6 z-20">
                     <ul className="space-y-4">
                         <li>
-                            <button className="text-lg font-light text-white">Portfolio</button>
+                            <button onClick={() => mobileMenuHandler("Portfolio")} className="text-lg font-light text-white">
+                                Portfolio
+                            </button>
                         </li>
                         <li>
-                            <button className="text-lg font-light text-white">Products</button>
+                            <button onClick={() => mobileMenuHandler("Products")} className="text-lg font-light text-white">
+                                Products
+                            </button>
                         </li>
                         <li>
-                            <button className="text-lg font-light text-white">Solutions</button>
+                            <button onClick={() => mobileMenuHandler("Solutions")} className="text-lg font-light text-white">
+                                Solutions
+                            </button>
                         </li>
                         <li>
-                            <button className="text-lg font-light text-white">Services</button>
+                            <button onClick={() => mobileMenuHandler("Services")} className="text-lg font-light text-white">
+                                Services
+                            </button>
                         </li>
                         <li>
-                            <button className="text-lg font-light text-white">About Us</button>
+                            <button onClick={() => mobileMenuHandler("About Us")} className="text-lg font-light text-white">
+                                About Us
+                            </button>
                         </li>
                         <li>
-                            <Link to={{ pathname: ROUTES.BLOG.PATH }} className="text-lg font-light text-white">
+                            <button onClick={() => mobileMenuHandler("Blog")} className="text-lg font-light text-white">
                                 Blog
-                            </Link>
+                            </button>
                         </li>
                         <li>
                             <button className="border-[1px] border-white text-white px-4 py-2 rounded hover:bg-[#4A47A3] hover:text-white transition duration-300">

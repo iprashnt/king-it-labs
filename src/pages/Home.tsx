@@ -13,9 +13,26 @@ import YourVision from "../components/Home/YourVision";
 import WhatTheySay from "../components/Home/WhatTheySay";
 
 const Home = () => {
+    // FUNCTIONS
+    const scrollToOurProducts = () => {
+        function findPosition() {
+            let obj: any = document.getElementById("ourProducts");
+            let currenttop = 0;
+            if (obj.offsetParent) {
+                do {
+                    currenttop += obj.offsetTop;
+                } while ((obj = obj.offsetParent));
+                return currenttop - 60;
+            } else {
+                return 0;
+            }
+        }
+        window.scroll(0, findPosition());
+    };
+
     return (
         <Layout>
-            <Navbar />
+            <Navbar scrollToOurProducts={scrollToOurProducts} />
             <TopSection />
             <SeeOurWork />
             <SuitesYourNeeds />
