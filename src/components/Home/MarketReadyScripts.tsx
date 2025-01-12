@@ -3,14 +3,17 @@ import CasinoImg from "../../assets/images/casino.png";
 import DexImg from "../../assets/images/dex.png";
 import NFTImg from "../../assets/images/nft.png";
 import CryptoImg from "../../assets/images/crypto.png";
-// import BGImage from "../../assets/images/market_ready_scripts_bg.png";
+import BGImage from "../../assets/images/market_ready_scripts_bg.png";
+import BGSmallImage from "../../assets/images/market_ready_scripts_bg_small.png";
 
 // COMPONENTS
 import WrapperLayout from "../WrapperLayout";
 
 const MarketReadyScripts = () => {
     return (
-        <div className="relative mb-[8rem]">
+        <div className="relative h-auto mb-[8rem]">
+            <img src={BGImage} className="w-full absolute xl:block lg:block md:block hidden" />
+            <img src={BGSmallImage} className="w-full top-[30rem] absolute xl:hidden lg:hidden md:hidden block" />
             <WrapperLayout>
                 <div className="mb-[1.5rem]">
                     <p className="xl:text-[4rem] lg:text-[4rem] md:text-[3rem] text-[3rem] text-white text-center mb-1">
