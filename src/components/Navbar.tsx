@@ -36,6 +36,10 @@ const Navbar = ({ scrollToOurProducts = () => {} }) => {
         if (menu === "Whitelabel") {
             return navigate(ROUTES.SOLUTION.WHITELABEL.PATH);
         }
+
+        if (menu === "Portfolio") {
+            return navigate(ROUTES.PORTFOLIO.PATH);
+        }
     };
     const mobileMenuHandler = (menu: string) => {
         toggleMobileMenu();
@@ -46,6 +50,10 @@ const Navbar = ({ scrollToOurProducts = () => {} }) => {
 
         if (menu === "Blog") {
             return navigate(ROUTES.BLOG.PATH);
+        }
+
+        if (menu === "Portfolio") {
+            return navigate(ROUTES.PORTFOLIO.PATH);
         }
     };
 

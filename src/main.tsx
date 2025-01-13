@@ -29,6 +29,9 @@ createRoot(document.getElementById("root")!).render(
                 {/* SOLUTION */}
                 <Route path={ROUTES.SOLUTION.WHITELABEL.PATH} element={<ROUTES.SOLUTION.WHITELABEL.COMPONENT />} />
                 <Route path={ROUTES.SOLUTION.WHITELABEL_DETAIL.PATH} element={<ROUTES.SOLUTION.WHITELABEL_DETAIL.COMPONENT />} />
+
+                {/* PORTFOLIO */}
+                <Route path={ROUTES.PORTFOLIO.PATH} element={<ROUTES.PORTFOLIO.COMPONENT />} />
             </Routes>
         </Router>
     </StrictMode>

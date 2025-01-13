@@ -10,7 +10,7 @@ import spotify from "../assets/images/spotify.png";
 const Footer = () => {
     return (
         <footer className="bg-[#0B0B0B] pt-12 border-t-[1px] border-t-[#FFFFFF29]">
-            <div className="xl:w-[80%] lg:w-[95%] md:w-[95%] w-[95%] mx-auto flex xl:flex-row lg:flex-row md:flex-row flex-col justify-between items-start">
+            <div className="xl:w-[83%] lg:w-[95%] md:w-[95%] w-[95%] mx-auto flex xl:flex-row lg:flex-row md:flex-row flex-col justify-between items-start">
                 {/* Column 1 - Logo, Newsletter Subscription */}
                 <div className="xl:w-[20.9rem] lg:w-[20.9rem] md:w-[18.9rem] w-auto sm:col-span-3 lg:col-span-1">
                     {/* Increased the column span for small screens */}
