@@ -9,6 +9,7 @@ import POC from "../pages/Services/POC";
 import MVP from "../pages/Services/MVP";
 import FDP from "../pages/Services/FDP";
 import SupportService from "../pages/Services/SupportService";
+import WhiteLabel from "../pages/Solution/WhiteLabel";
 
 const ROUTES: TROUTE = {
     HOME: {
@@ -33,6 +34,9 @@ const ROUTES: TROUTE = {
         FDP: { PATH: "/services/fdp", COMPONENT: FDP },
         SUPPORT: { PATH: "/services/support", COMPONENT: SupportService },
     },
+    SOLUTION: {
+        WHITELABEL: { PATH: "/solution/whitelabel", COMPONENT: WhiteLabel },
+    },
 };
 
 export default ROUTES;
@@ -48,4 +52,5 @@ type TROUTE = {
     BLOG: TRouteItem;
     BLOG_ARTICLE: TRouteItem;
     SERVICES: { POC: TRouteItem; MVP: TRouteItem; FDP: TRouteItem; SUPPORT: TRouteItem };
+    SOLUTION: { WHITELABEL: TRouteItem };
 };

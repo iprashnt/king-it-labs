@@ -32,6 +32,10 @@ const Navbar = ({ scrollToOurProducts = () => {} }) => {
         if (menu === "Blog") {
             return navigate(ROUTES.BLOG.PATH);
         }
+
+        if (menu === "Whitelabel") {
+            return navigate(ROUTES.SOLUTION.WHITELABEL.PATH);
+        }
     };
     const mobileMenuHandler = (menu: string) => {
         toggleMobileMenu();
@@ -78,19 +82,20 @@ const Navbar = ({ scrollToOurProducts = () => {} }) => {
                             <li
                                 onClick={() => {
                                     setIsSolutionsOpen(false);
+                                    desktopMenuHandler("Whitelabel");
                                 }}
                                 className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100"
                             >
-                                Solution 1
+                                Whitelabel
                             </li>
-                            <li
+                            {/* <li
                                 onClick={() => {
                                     setIsSolutionsOpen(false);
                                 }}
                                 className="text-[1.1rem] cursor-pointer text-sm px-4 py-2 hover:bg-gray-100"
                             >
                                 Solution 2
-                            </li>
+                            </li> */}
                         </ul>
                     )}
                 </div>

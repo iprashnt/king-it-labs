@@ -25,6 +25,9 @@ createRoot(document.getElementById("root")!).render(
                 <Route path={ROUTES.SERVICES.MVP.PATH} element={<ROUTES.SERVICES.MVP.COMPONENT />} />
                 <Route path={ROUTES.SERVICES.FDP.PATH} element={<ROUTES.SERVICES.FDP.COMPONENT />} />
                 <Route path={ROUTES.SERVICES.SUPPORT.PATH} element={<ROUTES.SERVICES.SUPPORT.COMPONENT />} />
+
+                {/* SOLUTION */}
+                <Route path={ROUTES.SOLUTION.WHITELABEL.PATH} element={<ROUTES.SOLUTION.WHITELABEL.COMPONENT />} />
             </Routes>
         </Router>
     </StrictMode>
