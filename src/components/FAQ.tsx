@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 
 // IMAGES
 import backgroundImage from "../assets/images/bg.png";
@@ -6,7 +6,7 @@ import backgroundImage from "../assets/images/bg.png";
 // ICONS
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-const FAQ = () => {
+const FAQ: FC<Props> = ({ className = "" }) => {
     // MOCK DATA
     const faqData: TFaqData = [
         {
@@ -41,7 +41,7 @@ const FAQ = () => {
 
     return (
         <div
-            className="bg-[#0E0E0E] flex flex-col items-center py-1 xl:px-[9rem] lg:px-[1.5rem] md:px-[1.5rem] px-[0.8rem]"
+            className={`${className} bg-[#0E0E0E] flex flex-col items-center py-1 xl:px-[9rem] lg:px-[1.5rem] md:px-[1.5rem] px-[0.8rem]`}
             style={{
                 backgroundImage: `url(${backgroundImage})`,
                 backgroundSize: "cover",
@@ -88,3 +88,6 @@ type TFaqData = Array<{
     question: string;
     answer: string;
 }>;
+interface Props {
+    className?: string;
+}

@@ -10,6 +10,7 @@ import MVP from "../pages/Services/MVP";
 import FDP from "../pages/Services/FDP";
 import SupportService from "../pages/Services/SupportService";
 import WhiteLabel from "../pages/Solution/WhiteLabel";
+import WhiteLabelDetail from "../pages/Solution/WhiteLabelDetail";
 
 const ROUTES: TROUTE = {
     HOME: {
@@ -36,6 +37,7 @@ const ROUTES: TROUTE = {
     },
     SOLUTION: {
         WHITELABEL: { PATH: "/solution/whitelabel", COMPONENT: WhiteLabel },
+        WHITELABEL_DETAIL: { PATH: "/solution/whitelabel/:id", COMPONENT: WhiteLabelDetail },
     },
 };
 
@@ -52,5 +54,5 @@ type TROUTE = {
     BLOG: TRouteItem;
     BLOG_ARTICLE: TRouteItem;
     SERVICES: { POC: TRouteItem; MVP: TRouteItem; FDP: TRouteItem; SUPPORT: TRouteItem };
-    SOLUTION: { WHITELABEL: TRouteItem };
+    SOLUTION: { WHITELABEL: TRouteItem; WHITELABEL_DETAIL: TRouteItem };
 };

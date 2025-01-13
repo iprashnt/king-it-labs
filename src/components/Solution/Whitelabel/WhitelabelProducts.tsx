@@ -1,3 +1,6 @@
+import { useNavigate } from "react-router-dom";
+import ROUTES from "../../../navigation/routes";
+
 // IMAGES
 import Product1Img from "../../../assets/images/whitelabel_product1.png";
 import Product2Img from "../../../assets/images/whitelabel_product2.png";
@@ -14,6 +17,9 @@ import BgRight2SmallImg from "../../../assets/images/our_products_bg_right2small
 import WrapperLayout from "../../WrapperLayout";
 
 const WhitelabelProducts = () => {
+    const navigate = useNavigate();
+
+    // MOCK DATA
     const productData = [
         {
             id: 1,
@@ -46,6 +52,12 @@ const WhitelabelProducts = () => {
             logo: Product5Img,
         },
     ];
+
+    // FUNCTIONS
+    const learnMoreHandler = (id: number) => {
+        navigate(`${ROUTES.SOLUTION.WHITELABEL.PATH}/${id}`);
+    };
+
     return (
         <div className="relative mb-[3.5rem]">
             <WrapperLayout>
@@ -67,7 +79,10 @@ const WhitelabelProducts = () => {
                                         </p>
                                     </div>
                                     <div className="flex justify-end items-center mt-[1rem]">
-                                        <button className="w-fit border-2 border-white text-white bg-black py-1 px-[1rem] text-center rounded-lg xl:text-base lg:text-base md:text-base text-xs">
+                                        <button
+                                            onClick={() => learnMoreHandler(id)}
+                                            className="w-fit border-2 border-white text-white bg-black py-1 px-[1rem] text-center rounded-lg xl:text-base lg:text-base md:text-base text-xs"
+                                        >
                                             Learn More
                                         </button>
                                     </div>

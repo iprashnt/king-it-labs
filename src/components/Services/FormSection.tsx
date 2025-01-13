@@ -3,9 +3,9 @@ import FormBGLeftImage from "../../assets/images/form_bg_left.png";
 import FormBGRightImage from "../../assets/images/form_bg_right.png";
 
 // COMPONENTS
-import TextArea from "../../components/Inputs/TextArea";
-import TextBox from "../../components/Inputs/InputBox";
-import Dropdown from "../../components/Inputs/Dropdown";
+import Dropdown from "../Inputs/Dropdown";
+import TextBox from "../Inputs/InputBox";
+import TextArea from "../Inputs/TextArea";
 
 const FormSection = () => {
     return (
