@@ -12,6 +12,7 @@ import SupportService from "../pages/Services/SupportService";
 import WhiteLabel from "../pages/Solution/WhiteLabel";
 import WhiteLabelDetail from "../pages/Solution/WhiteLabelDetail";
 import Portfolio from "../pages/Portfolio/Portfolio";
+import PortfolioDetail from "../pages/Portfolio/PortfolioDetail";
 
 const ROUTES: TROUTE = {
     HOME: {
@@ -41,6 +42,7 @@ const ROUTES: TROUTE = {
         WHITELABEL_DETAIL: { PATH: "/solution/whitelabel/:id", COMPONENT: WhiteLabelDetail },
     },
     PORTFOLIO: { PATH: "/portfolio", COMPONENT: Portfolio },
+    PORTFOLIO_DETAIL: { PATH: ":id", COMPONENT: PortfolioDetail },
 };
 
 export default ROUTES;
@@ -58,4 +60,5 @@ type TROUTE = {
     SERVICES: { POC: TRouteItem; MVP: TRouteItem; FDP: TRouteItem; SUPPORT: TRouteItem };
     SOLUTION: { WHITELABEL: TRouteItem; WHITELABEL_DETAIL: TRouteItem };
     PORTFOLIO: TRouteItem;
+    PORTFOLIO_DETAIL: TRouteItem;
 };

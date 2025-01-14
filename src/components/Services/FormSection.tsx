@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 // IMAGES
 import FormBGLeftImage from "../../assets/images/form_bg_left.png";
 import FormBGRightImage from "../../assets/images/form_bg_right.png";
@@ -7,9 +9,9 @@ import Dropdown from "../Inputs/Dropdown";
 import TextBox from "../Inputs/InputBox";
 import TextArea from "../Inputs/TextArea";
 
-const FormSection = () => {
+const FormSection: FC<Props> = ({ className = "" }) => {
     return (
-        <div className="w-full relative mt-[10rem] flex justify-center items-center mb-20">
+        <div className={`${className} w-full relative mt-[10rem] flex justify-center items-center mb-20`}>
             <img src={FormBGLeftImage} className="absolute top-0 left-0 mt-[10rem]" />
             <div className="z-10 w-full xl:px-[8rem] lg:px-[4rem] md:px-[3rem] px-[1rem]">
                 <div className="bg-[#202020] p-[2rem] rounded-lg border-[1px] border-[#808080]">
@@ -75,3 +77,8 @@ const FormSection = () => {
 };
 
 export default FormSection;
+
+// TYPES
+interface Props {
+    className?: string;
+}

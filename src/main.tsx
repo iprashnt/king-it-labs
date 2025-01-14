@@ -31,7 +31,10 @@ createRoot(document.getElementById("root")!).render(
                 <Route path={ROUTES.SOLUTION.WHITELABEL_DETAIL.PATH} element={<ROUTES.SOLUTION.WHITELABEL_DETAIL.COMPONENT />} />
 
                 {/* PORTFOLIO */}
-                <Route path={ROUTES.PORTFOLIO.PATH} element={<ROUTES.PORTFOLIO.COMPONENT />} />
+                <Route path={ROUTES.PORTFOLIO.PATH}>
+                    <Route index element={<ROUTES.PORTFOLIO.COMPONENT />} />
+                    <Route path={ROUTES.PORTFOLIO_DETAIL.PATH} element={<ROUTES.PORTFOLIO_DETAIL.COMPONENT />} />
+                </Route>
             </Routes>
         </Router>
     </StrictMode>

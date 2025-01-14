@@ -1,3 +1,6 @@
+import { useNavigate } from "react-router-dom";
+import ROUTES from "../../navigation/routes";
+
 // IMAGES
 import cardImg1 from "../../assets/images/portfolio_card_1.png";
 import cardImg2 from "../../assets/images/portfolio_card_2.png";
@@ -10,6 +13,13 @@ import cardImg6 from "../../assets/images/portfolio_card_6.png";
 import PortfolioProjectCard from "./PortfolioProjectCard";
 
 const PortfolioProjects = () => {
+    const navigate = useNavigate();
+
+    // FUNCTIONS
+    const cardClickHandler = (id: number) => {
+        navigate(`${ROUTES.PORTFOLIO.PATH}/${id}`);
+    };
+
     return (
         <div>
             <div className="grid xl:grid-cols-2 lg:grid-cols-2 gap-x-5 xl:gap-y-12 lg:gap-y-[6rem] md:gap-y-14 gap-y-14">
@@ -22,6 +32,7 @@ const PortfolioProjects = () => {
                     className="bg-gradient-to-b from-[#1B1B1B] to-[#182020]"
                     buttonText="Learn More"
                     imageClassName="xl:-top-[4.5rem] lg:-top-[3.5rem] md:-top-[4.7rem] -top-[3rem]"
+                    onClick={() => cardClickHandler(1)}
                 />
                 <PortfolioProjectCard
                     image={cardImg2}
@@ -32,6 +43,7 @@ const PortfolioProjects = () => {
                     className="bg-gradient-to-b from-[#1D1D1D] to-[#0C1120]"
                     buttonText="Learn More"
                     imageClassName="xl:-top-[4.5rem] lg:-top-[3.7rem] md:-top-[4.7rem] -top-[3.5rem]"
+                    onClick={() => cardClickHandler(2)}
                 />
                 <PortfolioProjectCard
                     image={cardImg3}
@@ -42,6 +54,7 @@ const PortfolioProjects = () => {
                     className="bg-gradient-to-b from-[#1D1D1D] to-[#0C1120]"
                     buttonText="Visit Vesta"
                     imageClassName="xl:-top-[5.2rem] lg:-top-[4rem] md:-top-[5.4rem] -top-[3.5rem]"
+                    onClick={() => cardClickHandler(3)}
                 />
                 <PortfolioProjectCard
                     image={cardImg4}
@@ -52,6 +65,7 @@ const PortfolioProjects = () => {
                     className="bg-gradient-to-b from-[#1A191A] to-[#211320]"
                     buttonText="Visit CasiNeo"
                     imageClassName="xl:-top-[1.7rem] lg:-top-[1.3rem] md:-top-[1.5rem] -top-[1.5rem]"
+                    onClick={() => cardClickHandler(4)}
                 />
                 <PortfolioProjectCard
                     image={cardImg5}
@@ -62,6 +76,7 @@ const PortfolioProjects = () => {
                     className="bg-gradient-to-b from-[#161616] to-[#0D1519]"
                     buttonText="Visit JollyWhale"
                     imageClassName="xl:-top-[5rem] lg:-top-[4rem] md:-top-[5.3rem] -top-[3.5rem]"
+                    onClick={() => cardClickHandler(5)}
                 />
                 <PortfolioProjectCard
                     image={cardImg6}
@@ -72,6 +87,7 @@ const PortfolioProjects = () => {
                     className="bg-gradient-to-b from-[#171714] to-[#1E1D0E]"
                     buttonText="Visit JollyWhale"
                     imageClassName="xl:-top-[5.3rem] lg:-top-[4.5rem] md:-top-[5rem] -top-[3.5rem]"
+                    onClick={() => cardClickHandler(6)}
                 />
             </div>
         </div>

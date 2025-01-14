@@ -40,6 +40,10 @@ const Navbar = ({ scrollToOurProducts = () => {} }) => {
         if (menu === "Portfolio") {
             return navigate(ROUTES.PORTFOLIO.PATH);
         }
+
+        if (menu === "About Us") {
+            return navigate(ROUTES.COMPANY.PATH);
+        }
     };
     const mobileMenuHandler = (menu: string) => {
         toggleMobileMenu();
@@ -54,6 +58,10 @@ const Navbar = ({ scrollToOurProducts = () => {} }) => {
 
         if (menu === "Portfolio") {
             return navigate(ROUTES.PORTFOLIO.PATH);
+        }
+
+        if (menu === "About Us") {
+            return navigate(ROUTES.COMPANY.PATH);
         }
     };
 
@@ -162,7 +170,9 @@ const Navbar = ({ scrollToOurProducts = () => {} }) => {
                     )}
                 </div>
 
-                <button className="text-[1.1rem] font-light text-white hover:underline">About Us</button>
+                <button onClick={() => desktopMenuHandler("About Us")} className="text-[1.1rem] font-light text-white hover:underline">
+                    About Us
+                </button>
                 <button onClick={() => desktopMenuHandler("Blog")} className="text-[1.1rem] font-light text-white hover:underline">
                     Blog
                 </button>
